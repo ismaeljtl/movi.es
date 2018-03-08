@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tamaño de item en filas</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .container {
+            display: grid;   
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(2, 200px);                  
+            grid-gap: 5px;
+            height: 100vh;
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: solid 1px red;
+            border-radius: 10px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;           
+        }
+
+        /* El tamaño de las filas se define de igual manera que en las columnas */
+
+        .item:nth-of-type(1){
+            grid-column: 1 / span 3;
+            grid-row: 1 / span 2;
+        }
+        .item:nth-of-type(2){
+            grid-column: 4 / span 2;
+            grid-row: 1 / span 2;
+        }
+        .item:nth-of-type(3){
+            grid-column: 6 / span 2;
+            /* Esta propiedad la coloco para dar a entender como funciona la definicion de 
+            tamaños para filas pero si la quito no pasa nada ya que CSS Grids es inteligente
+            y apila los elementos de una manera correcta! */
+            grid-row: 1 / span 1;
+        }
+        .item:nth-of-type(4){
+            grid-column: 6 / span 1;
+            /* Esta propiedad la coloco para dar a entender como funciona la definicion de 
+            tamaños para filas pero si la quito no pasa nada ya que CSS Grids es inteligente
+            y apila los elementos de una manera correcta! */
+            grid-row: 2 / span 1;
+        }
+        .item:nth-of-type(5){
+            grid-column: 7 / span 1;
+            /* Esta propiedad la coloco para dar a entender como funciona la definicion de 
+            tamaños para filas pero si la quito no pasa nada ya que CSS Grids es inteligente
+            y apila los elementos de una manera correcta! */
+            grid-row: 2 / span 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">#1</div>
+        <div class="item">#2</div>
+        <div class="item">#3</div>
+        <div class="item">#4</div>
+        <div class="item">#5</div>
+    </section>
+</body>
+</html>
