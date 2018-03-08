@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tamaño de item en columnas</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .container {
+            display: grid;   
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);                  
+            grid-gap: 10px;    
+            height: 100vh;
+            
+
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: solid 1px red;
+            border-radius: 10px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;           
+        }
+
+        /* El tamaño de columnas se calcula por medio de las Grid Lines.
+        Las Grid Lines empiezan en 1 y terminan en el numero de su longitud. */
+
+        .item:nth-of-type(1){
+            /* Para definir el tamaño de columnas colocamos las siguientes propiedades */
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item:nth-of-type(7){
+            /* Aunque contamos con la sintaxis resumida!  */
+            /* grid-column: inicio / fin; */
+            grid-column: 2 / 4;
+        }
+        .item:nth-of-type(4){
+            /* Si no sabemos el numero de la linea en que queremos que acabe 
+            podemos colocar el espacio que queremos que tome con 
+            la funcion span: 
+            grid-column: lineaDeInicio / span Tamaño */
+            grid-column: 1 / span 2;
+        }
+        .item:nth-of-type(3){
+            /* Si queremos abarcar todo el tamaño de una columna pero no sabemos
+            cuantas lineas posee esta (debido a que el sitio se puede volver dinamico).
+            Esto lo podemos especificar con "1 / -1" que indica que toma todo el ancho 
+            de las columnas. */
+            grid-column: 1 / -1;
+        }
+        .item:nth-of-type(8){
+            grid-column: 1 / span 2;
+        }
+        .item:nth-of-type(4){
+            grid-column: 1 / span 2;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item">#1</div>
+        <div class="item">#2</div>
+        <div class="item">#3</div>
+        <div class="item">#4</div>
+        <div class="item">#5</div>
+        <div class="item">#6</div>
+        <div class="item">#7</div>
+        <div class="item">#8</div>
+        <div class="item">#9</div>
+        <div class="item">#10</div>
+        <div class="item">#11</div>
+        <div class="item">#12</div>
+    </section>
+</body>
+</html>
