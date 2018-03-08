@@ -1,2 +1,2 @@
 # GridCSS-Platzi
-Curso de CSSGrids para la web. 
+Curso de CSS Grids para la web. 
