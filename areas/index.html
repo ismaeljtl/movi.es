@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Areas</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .container {
+            display: grid;            
+            grid-gap: 10px;    
+            /* grid-template: filas / columnas; */
+            grid-template: 100px 1fr 150px / 200px 1fr;  
+            height: 100vh;
+            
+            /* 
+            Para usar los grid-areas los elementos que son areas deben ser
+            necesariamente hijos de un elemento grid, en otras palabras, los
+            elementos deben ser grid items. 
+            
+            En el grid area se escribe como quiero que sea el area de mi layout. 
+            Si necesito que un area ocupe todo el width del ViewPort pues 
+            debo repetirlo como se ve con header y footer. 
+            */
+            grid-template-areas: "header header" 
+                                 "left contenido" 
+                                 /* ". contenido" <-- Si llegara a necesitar un espacion en blanco en mi area coloco un "."*/
+                                 "footer footer";
+
+        }
+        .item {
+            background: lightblue;
+            padding: 10px;
+            border: solid 1px red;
+            border-radius: 10px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;           
+        }
+
+        /* Despues de haber colocado el grid-area solo falta definir los elementos, 
+           lo cual lo vemos en esta parte del codigo: */
+        .header {
+            grid-area: header;
+            background: blue;
+        }
+        .left {
+            grid-area: left;
+            background: orangered;
+        }
+        .contenido {
+            grid-area: contenido;
+            background: gray;
+        }
+        .footer {
+            grid-area: footer;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="item header">Header</div>
+        <div class="item left">Left</div>
+        <div class="item contenido">Contenido</div>
+        <div class="item footer">Footer</div>
+    </section>
+</body>
+</html>
