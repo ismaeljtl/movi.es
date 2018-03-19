@@ -82,19 +82,26 @@
             background: #fc6463;
             color: white;
             text-align: center;
-            align-items: center;
         }
 
         nav .up {
             display: grid;
             grid-area: up;
-            grid-template-rows: repeat(3, 1fr);
+            justify-content: center;
+            align-content: space-around;
         }
 
         nav .down {
             display: grid;
             grid-area: down;
+            justify-content: center;
+            align-content: end;
         }
+
+        nav .down .ajustes {
+            padding-bottom: 20px;
+        } 
+
 
         nav p {
             margin: 0;
