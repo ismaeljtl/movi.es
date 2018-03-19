@@ -1,2 +1,2 @@
-# GridCSS-Platzi
-Curso de CSS Grids para la web. 
+# movi.es
+Proyecto personal hecho con diseño dado por Platzi
